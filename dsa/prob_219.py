@@ -1,3 +1,4 @@
+"""
 nums = [1,2,3,1]
 k = 3
 found = False
@@ -12,3 +13,5 @@ for i in range(len(nums)):
         break
             
 print(found)
+# time limit exceed prob
+"""

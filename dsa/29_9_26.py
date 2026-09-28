@@ -13,32 +13,33 @@ print(lst)
 #merge sort 
 def merge_arr(lst):
     n = len(lst)
-    if len(lst) <= 1:
+    if len(lst)<=1 :
         return lst
     mid = n//2
     left_arr = lst[:mid]
     right_arr = lst[mid:]
     left = merge_arr(left_arr)
-    rigth = merge_arr(rigth_arr)
-    return merger_sort(left , rigth)
+    right = merge_arr(right_arr)
+    return merger_sort(left , right)
 
 def merger_sort(left , right):
     res = []
-    i,j = 0
-    n,m = len(left) , len(right) 
+    i,j = 0,0
+    n = len(left)
+    m = len(right)
     while(i<n and j<m) :
-        if (left[i] <= rigth[j]):
+        if (left[i] <= right[j]):
             res.append(left[i])
-            i++
+            i=i+1
         else:
-            res.append(rigth[j])
-            j++
-    if (i<n) :
-        while(i<n):
-            res.append(left[i])
-            i++
-    if(j<m):
-        while(j<m):
-            res.append(rigth[j])
-            j++
+            res.append(right[j])
+            j=j+1
+    while (i<n):
+        res.append(left[i])
+        i=i+1
+    while(j<m):
+        res.append(right[j])
+        j=j+1
     return res
+main_res = merge_arr(lst)
+print(main_res)

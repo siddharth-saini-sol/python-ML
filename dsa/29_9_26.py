@@ -13,6 +13,8 @@ print(lst)
 #merge sort 
 def merge_arr(lst):
     n = len(lst)
+    if len(lst) <= 1:
+        return lst
     mid = n//2
     left_arr = lst[:mid]
     right_arr = lst[mid:]
